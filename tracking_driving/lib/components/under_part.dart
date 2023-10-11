@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tracking_driving/constants.dart';
+import 'package:tracking_driving/utils/constants.dart';
 
 class UnderPart extends StatelessWidget {
-  const UnderPart(
-      {Key? key,
-      required this.title,
-      required this.navigatorText,
-      required this.onTap})
-      : super(key: key);
+  const UnderPart({Key? key, required this.title, required this.navigatorText, required this.onTap}) : super(key: key);
   final String title;
   final String navigatorText;
   final Function() onTap;
@@ -19,11 +14,7 @@ class UnderPart extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 13,
-              color: Colors.grey,
-              fontWeight: FontWeight.w600),
+          style: const TextStyle(fontFamily: 'OpenSans', fontSize: 13, color: Colors.grey, fontWeight: FontWeight.w600),
         ),
         const SizedBox(
           width: 20,
@@ -35,10 +26,7 @@ class UnderPart extends StatelessWidget {
           child: Text(
             navigatorText,
             style: const TextStyle(
-                color: kPrimaryColor,
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'Opensans'),
+                color: kPrimaryColor, fontSize: 13, fontWeight: FontWeight.w600, fontFamily: 'Opensans'),
           ),
         )
       ],

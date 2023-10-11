@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tracking_driving/constants.dart';
+import 'package:tracking_driving/utils/constants.dart';
 
 class Upside extends StatelessWidget {
   const Upside({Key? key, required this.imgUrl}) : super(key: key);

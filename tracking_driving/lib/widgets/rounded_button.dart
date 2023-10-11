@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tracking_driving/constants.dart';
+import 'package:tracking_driving/utils/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
@@ -38,11 +38,7 @@ class RoundedButton extends StatelessWidget {
           primary: kPrimaryColor,
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
           textStyle: TextStyle(
-              letterSpacing: 2,
-              color: textColor,
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'OpenSans')),
+              letterSpacing: 2, color: textColor, fontSize: 12, fontWeight: FontWeight.bold, fontFamily: 'OpenSans')),
     );
   }
 }

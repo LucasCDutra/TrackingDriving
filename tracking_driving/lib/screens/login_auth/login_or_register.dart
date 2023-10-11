@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tracking_driving/screens/login_screen.dart';
+import 'package:tracking_driving/screens/login_auth/login_screen.dart';
 import 'package:tracking_driving/screens/screens.dart';
 
 class LoginOrRegister extends StatefulWidget {

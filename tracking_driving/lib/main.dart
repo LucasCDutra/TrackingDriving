@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:tracking_driving/screens/auth_screen.dart';
-import 'package:tracking_driving/screens/screens.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tracking_driving/screens/login_auth/auth_screen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tracking_driving/ui/splash.dart';
+import 'utils/config/firebase_options.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+late SharedPreferences sharedPreferences;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,6 +16,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
+  sharedPreferences = await SharedPreferences.getInstance();
+  await dotenv.load(fileName: "assets/config/.env");
   runApp(const MyApp());
 }
 
@@ -18,9 +26,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthScreen(),
+      title: 'Tracking Drive',
+      theme: ThemeData(useMaterial3: true),
+      //home: const AuthScreen(),
+      home: const Splash(),
+      supportedLocales: const [Locale('pt', 'BR')],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
     );
   }
 }

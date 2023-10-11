@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tracking_driving/components/components.dart';
 import 'package:tracking_driving/components/under_part.dart';
-import 'package:tracking_driving/constants.dart';
-import 'package:tracking_driving/controllers/login_controller.dart';
+import 'package:tracking_driving/utils/constants.dart';
+import 'package:tracking_driving/controller/login_controller.dart';
 import 'package:tracking_driving/screens/screens.dart';
 import 'package:tracking_driving/widgets/widgets.dart';
 
@@ -65,8 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 hintText: "Senha",
                                 icon: Icons.lock,
                                 isSecret: true,
-                                textController:
-                                    loginController.passwordController,
+                                textController: loginController.passwordController,
                               ),
                               const Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 60.0),
